@@ -1,0 +1,14 @@
+{
+  "name": "language-hcl",
+  "version": "0.0.0",
+  "description": "Syntax support for the HashiCorp Configuration Language",
+  "keywords": [
+    "language",
+    "grammar"
+  ],
+  "repository": "https://github.com/fd/language-hcl",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  }
+}
