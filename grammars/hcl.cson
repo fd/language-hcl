@@ -8,10 +8,6 @@
 ]
 'patterns': [
   {
-    'match': '^\\s*(#|//).*$'
-    'name': 'comment'
-  },
-  {
     'include': '#value'
   }
 ]
@@ -88,6 +84,10 @@
     'name': 'meta.structure.dictionary.hcl'
     'patterns': [
       {
+        'comment': 'the HCL object value'
+        'include': '#comment'
+      }
+      {
         'comment': 'the HCL object key'
         'include': '#string'
       }
@@ -118,6 +118,31 @@
       }
     ]
 
+  'comment':
+    'begin': '(^[ \\t]+)?(?=(#|//))'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.whitespace.comment.leading.hcl'
+    'end': '(?!\\G)'
+    'patterns': [
+      {
+        'begin': '//'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.hcl'
+        'end': '\\n'
+        'name': 'comment.line.double-slash.hcl'
+      }
+      {
+        'begin': '#'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.hcl'
+        'end': '\\n'
+        'name': 'comment.line.pound.hcl'
+      }
+    ]
+
   'value':
     'comment': 'the \'value\' diagram at http://json.org'
     'patterns': [
@@ -138,5 +163,8 @@
       }
       {
         'include': '#object'
+      }
+      {
+        'include': '#comment'
       }
     ]
