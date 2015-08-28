@@ -3,4 +3,4 @@
 
 '.source.hcl':
   'editor':
-    'commentStart': '# '
+    'commentStart': '// '
