@@ -4,7 +4,8 @@
 'scopeName': 'source.hcl'
 'name': 'HashiCorp Configuration Language'
 'fileTypes': [
-  'hcl'
+  'hcl',
+  'tf'
 ]
 'patterns': [
   {
