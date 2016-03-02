@@ -5,6 +5,7 @@
 'name': 'HashiCorp Configuration Language'
 'fileTypes': [
   'hcl',
+  'nomad',
   'tf'
 ]
 'patterns': [
