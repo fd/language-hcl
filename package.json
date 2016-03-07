@@ -1,6 +1,6 @@
 {
   "name": "language-hcl",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Syntax support for the HashiCorp Configuration Language",
   "keywords": [
     "language",
