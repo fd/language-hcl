@@ -145,6 +145,19 @@
       }
     ]
 
+  'heredoc':
+    'begin': '(?>\\=\\s*<<(\\w+))'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.hcl'
+    'end': '^\\1$'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.hcl'
+    'name': 'string.unquoted.heredoc.hcl'
+    'patterns': [
+    ]
+
   'value':
     'comment': 'the \'value\' diagram at http://json.org'
     'patterns': [
@@ -156,6 +169,9 @@
       }
       {
         'include': '#kwString'
+      }
+      {
+        'include': '#heredoc'
       }
       {
         'include': '#string'
