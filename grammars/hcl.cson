@@ -47,6 +47,7 @@
         'match': '\\\\.'
         'name': 'invalid.illegal.unrecognized-string-escape.hcl'
       }
+      { 'include': '#interpolation' }
     ]
 
   'array':
@@ -156,6 +157,38 @@
         'name': 'punctuation.definition.string.end.hcl'
     'name': 'string.unquoted.heredoc.hcl'
     'patterns': [
+      { 'include': '#interpolation' }
+    ]
+
+  'interpolation':
+    'begin': '\\$\\{'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.section.embedded.hcl'
+    'end': '\\}'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.section.embedded.hcl'
+    'name': 'source.hcl.embedded.source'
+    'patterns': [
+      {
+        'begin': '\\{'
+        'beginCaptures':
+          '0':
+            'name': 'meta.brace.curly.hcl'
+        'end': '\\}'
+        'endCaptures':
+          '0':
+            'name': 'meta.brace.curly.hcl'
+        'patterns': [
+          {
+            'include': '$self'
+          }
+        ]
+      }
+      {
+        'include': '$self'
+      }
     ]
 
   'value':
