@@ -122,7 +122,7 @@
     ]
 
   'comment':
-    'begin': '(^[ \\t]+)?(?=(#|//))'
+    'begin': '(^[ \\t]+)?(?=(#|//|/\\*))'
     'beginCaptures':
       '1':
         'name': 'punctuation.whitespace.comment.leading.hcl'
@@ -143,6 +143,17 @@
             'name': 'punctuation.definition.comment.hcl'
         'end': '\\n'
         'name': 'comment.line.pound.hcl'
+      }
+      {
+        'begin': '/\\*'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.hcl'
+        'end': '\\*/'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.hcl'
+        'name': 'comment.block.hcl'
       }
     ]
 
